@@ -11,7 +11,8 @@ public class Main {
         display.addPoint(4, 5, 'p');
         System.out.println("\n");
         display.printScreen();
-        display.addLine(2, 3, 10, 40, 'v');
+        display.addLine(5, 55, 10 , 3, 'v');
+        display.addText("Hello world !",20, 10);
         System.out.println("\n");
         display.printScreen();
     }
