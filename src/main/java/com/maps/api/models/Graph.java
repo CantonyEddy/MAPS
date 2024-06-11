@@ -3,6 +3,8 @@ package com.maps.api.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+
 public class Graph {
     private String name;
     private int height;
