@@ -1,0 +1,61 @@
+Index: src/main/java/com/maps/api/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.maps.api;\r\n\r\nimport com.maps.api.console.Display;\r\nimport com.maps.api.console.Display.*;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        Display display = new Display(\"truc\", 50, 50, \".\");\r\n        System.out.println(display.getName());\r\n        display.printScreen();\r\n        display.addPoint(4, 5, 'p');\r\n        System.out.println(\"\\n\");\r\n        display.printScreen();\r\n        display.addLine(2, 3, 10, 40, 'v');\r\n        System.out.println(\"\\n\");\r\n        display.printScreen();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/maps/api/Main.java b/src/main/java/com/maps/api/Main.java
+--- a/src/main/java/com/maps/api/Main.java	(revision 608818f67357cdd819d0f509eb35f9738a751bd5)
++++ b/src/main/java/com/maps/api/Main.java	(date 1717185666093)
+@@ -2,17 +2,23 @@
+ 
+ import com.maps.api.console.Display;
+ import com.maps.api.console.Display.*;
++import com.maps.api.models.Node;
+ 
+ public class Main {
+     public static void main(String[] args) {
+-        Display display = new Display("truc", 50, 50, ".");
+-        System.out.println(display.getName());
+-        display.printScreen();
+-        display.addPoint(4, 5, 'p');
+-        System.out.println("\n");
+-        display.printScreen();
+-        display.addLine(2, 3, 10, 40, 'v');
+-        System.out.println("\n");
+-        display.printScreen();
++        Node node1 = new Node(1, 2, "Node1");
++        Node node2 = new Node(3, 4, "Node2");
++        Node node3 = new Node(5, 6, "Node3");
++
++        node1.addNode(node2);
++        node1.addNode(node3);
++
++        System.out.println("Node 1 name: " + node1.getName()); // Affiche Node1
++        System.out.println("Node 1 connected nodes: " + node1.getConnectNode().size()); // Affiche 2
++        System.out.println("Node 1 first connected node name: " + node1.getConnectNode().get(0).getName()); // Affiche Node2
++        System.out.println("Node 1 second connected node name: " + node1.getConnectNode().get(1).getName()); // Affiche Node3
++
++        node1.removeNode(node2);
++        System.out.println("Node 1 connected nodes after removal: " + node1.getConnectNode().size()); // Affiche 1
+     }
+ }
+Index: src/main/java/com/maps/api/models/Graph.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.maps.api.models;\r\n\r\npublic class Graph {\r\n    private String name;\r\n    private int height;\r\n    private int width;\r\n    private ArrayList<Node> Nodes;\r\n\r\n    public Graph {\r\n        this.name = name;\r\n        this.height = height;\r\n        this.width = width;\r\n        this.nodes = new ArrayList<>();\r\n    }\r\n\r\n    public void addNode(Node) {\r\n        nodes.add(Node);\r\n    }\r\n\r\n    public void remouveNode(str) {\r\n        Node nodeToRemove = findNodeByName(str);\r\n        if (nodeToRemove != null) {\r\n            for (Node : nodes) {\r\n                Node.removeNode(nodeToRemove);\r\n            }\r\n            nodes.remove(nodeToRemove);\r\n        }\r\n    }\r\n\r\n    public void addLiaison(str1, str2) {\r\n        Node node1 = findNodeByName(str1);\r\n        Node node2 = findNodeByName(str2);\r\n        if (node1 != null && node2 != null) {\r\n            node1.addNode(node2);\r\n            node2.addNode(node1);\r\n        }\r\n    }\r\n\r\n    public remouveLiaison(str1, str2) {\r\n        Node node1 = findNodeByName(str1);\r\n        Node node2 = findNodeByName(str2);\r\n        if (node1 != null && node2 != null) {\r\n            node1.removeNode(node2);\r\n            node2.removeNode(node1);  // Si la liaison est bidirectionnelle\r\n        }\r\n    }\r\n\r\n    private Node findNodeByName(String nodeName) {\r\n        for (Node node : nodes) {\r\n            if (node.getName().equals(nodeName)) {\r\n                return node;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public int getHeight() {\r\n        return height;\r\n    }\r\n\r\n    public int getWidth() {\r\n        return width;\r\n    }\r\n\r\n    public ArrayList<Node> getNodes() {\r\n        return nodes;\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/maps/api/models/Graph.java b/src/main/java/com/maps/api/models/Graph.java
+--- a/src/main/java/com/maps/api/models/Graph.java	(revision 608818f67357cdd819d0f509eb35f9738a751bd5)
++++ b/src/main/java/com/maps/api/models/Graph.java	(date 1717761912267)
+@@ -1,5 +1,7 @@
+ package com.maps.api.models;
+ 
++import java.util.ArrayList;
++
+ public class Graph {
+     private String name;
+     private int height;

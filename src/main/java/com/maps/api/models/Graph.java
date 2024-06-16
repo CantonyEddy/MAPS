@@ -2,6 +2,7 @@ package com.maps.api.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.maps.api.models.Node;
 
 public class Graph {
     private String name;
@@ -16,21 +17,15 @@ public class Graph {
         this.nodes = new ArrayList<>();
     }
 
-    public void init() {
-        this.nodes = new ArrayList<>();
-    }
-
     public void addNode(Node node) {
-        nodes.add(node);
+        this.nodes.add(node);
     }
 
     public void removeNode(String nodeName) {
-        Node nodeToRemove = findNodeByName(nodeName);
-        if (nodeToRemove != null) {
-            for (Node node : nodes) {
-                node.removeNode(nodeToRemove);
+        for (int i=0; i<this.nodes.size(); ++i){
+            if (this.nodes.get(i).getName().equals(nodeName)){
+                this.nodes.remove(i);
             }
-            nodes.remove(nodeToRemove);
         }
     }
 
@@ -39,16 +34,13 @@ public class Graph {
         Node node2 = findNodeByName(nodeName2);
         if (node1 != null && node2 != null) {
             node1.addNode(node2);
-            node2.addNode(node1);
         }
     }
 
     public void removeLiaison(String nodeName1, String nodeName2) {
         Node node1 = findNodeByName(nodeName1);
-        Node node2 = findNodeByName(nodeName2);
-        if (node1 != null && node2 != null) {
-            node1.removeNode(node2);
-            node2.removeNode(node1);
+        if (node1 != null) {
+            node1.removeNode(nodeName2);
         }
     }
 

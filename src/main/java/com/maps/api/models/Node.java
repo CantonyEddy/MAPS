@@ -37,8 +37,12 @@ public class Node {
         this.connectNode.add(node);
     }
 
-    public void removeNode(Node node){
-        this.connectNode.remove(node);
+    public void removeNode(String nodeName){
+        for (int i=0; i<this.connectNode.size(); ++i){
+            if (this.connectNode.get(i).getName().equals(nodeName)){
+                this.connectNode.remove(i);
+            }
+        }
     }
 
 
