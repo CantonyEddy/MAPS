@@ -70,7 +70,7 @@ public class Main  {
             scanner.nextLine();
             switch (number) {
                 case 1:
-                    System.out.print("Veuillez saisir les coordonnes et le nom du point séparés par des espaces (ex : X Y NAME): ");
+                    System.out.print("Veuillez saisir les coordonnées et le nom du point séparé par des espaces (ex : X Y NAME): ");
                     String input = scanner.nextLine();  // Lire toute la ligne
                     String[] parts = input.split(" ");  // Diviser la ligne en parties
             
@@ -91,7 +91,7 @@ public class Main  {
                     for (Node node : ville.getNodes()){
                         System.out.println(node.getName() + " x: " + node.getX() + " y: " + node.getY() + "\n");
                     }
-                    System.out.print("Veuillez saisir le nom point de départ et d'arrivé séparés par un espace (ex : pointDepart pointArrive): ");
+                    System.out.print("Veuillez saisir le nom du point de départ et d'arrivé séparé par un espace (ex : pointDepart pointArrive): ");
                     String input2 = scanner.nextLine();  // Lire toute la ligne
                     String[] parts2 = input2.split(" ");  // Diviser la ligne en parties
             
@@ -117,20 +117,14 @@ public class Main  {
                     clearConsole();
                     System.out.print("Voici le chemin optimal entre " + pointDepartdijkstra + " et " + pointArrivedijkstra + " : \n");
                     display.printScreen();
-                    System.out.print("Entrez n'importe quoi pour passer a la suite : ");
+                    System.out.print("Entrez n'importe quoi pour passer à la suite : ");
                     scanner.nextLine();
                     break;
                 
                 default:
                     break;
             }
-
-            // Fermer le scanner (facultatif mais recommandé)
-            //scanner.close();
         }
-        //clearConsole();
-        //dijkstraAlgo(ville, nodeA, nodeC, display);
-        //display.printScreen();
     }
 
     public static void printGraph(Graph graph, Display display, char car) {
