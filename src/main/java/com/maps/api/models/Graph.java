@@ -5,6 +5,7 @@ import java.util.List;
 import com.maps.api.models.Node;
 
 public class Graph {
+    
     private String name;
     private int height;
     private int width;
@@ -67,5 +68,14 @@ public class Graph {
 
     public List<Node> getNodes() {
         return nodes;
+    }
+
+    public Node getNodeByName(String name) {
+        for (Node node : this.nodes){
+            if (node.getName().equals(name)){
+                return node;
+            }
+        }
+        return null;
     }
 }
