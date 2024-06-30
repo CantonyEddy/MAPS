@@ -33,7 +33,7 @@ Voici les options disponibles dans l'interface :
 Actuellement, les contributions ne sont pas acceptées.
 
 ## Licence
-Licence MIT
+Licence MIT.
 
 ## Contact
-Pour toute question, veuillez nous contacter via le serveur discord suivant : [KALIX](https://discord.gg/Dmh6wHaKvD).
+Pour toute question, veuillez nous contacter via le serveur discord suivant : [KALIX](https://discord.gg/Dmh6wHaKvD)
