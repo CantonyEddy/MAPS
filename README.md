@@ -36,4 +36,4 @@ Actuellement, les contributions ne sont pas acceptées.
 Licence MIT
 
 ## Contact
-Pour toute question, veuillez me contacter à l'adresse suivante : cantony.eddy@gmail.com.
+Pour toute question, veuillez nous contacter via le serveur discord suivant : [KALIX](https://discord.gg/Dmh6wHaKvD).
