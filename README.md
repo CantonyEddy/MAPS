@@ -26,7 +26,8 @@ Voici les options disponibles dans l'interface :
 - **Ajout d'un point** : sélectionnez l'option 1.
 - **Création d'une route** : sélectionnez l'option 2, puis spécifiez les points A et B.
 - **Recherche d'un itinéraire** : sélectionnez l'option 3, puis spécifiez les points A et B.
-Visualisation
+  
+![Exemple de carte avec les options].(image/image.png)
 
 ## Contribution
 Actuellement, les contributions ne sont pas acceptées.
